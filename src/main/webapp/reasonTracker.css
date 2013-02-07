@@ -1,0 +1,29 @@
+.dropdown.hidden {
+	display: none;
+}
+
+#dropdown_root {
+	display: block;
+}
+
+.reason {
+	display: inline-block;
+	border: 1px solid gray;
+	padding: 3px;
+	padding-left: 13px;
+	padding-right: 13px;
+	margin: 5px;
+}
+
+.reason .categories ul {
+	margin-left: 17px;
+	padding: 0;
+}
+
+.reason .categories ul ul {
+	margin-left: 5px;
+}
+
+.reason .notes {
+	margin-top: 5px;
+}

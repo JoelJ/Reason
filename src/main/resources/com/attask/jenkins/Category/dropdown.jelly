@@ -1,0 +1,16 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<div id="dropdown_${it.id}" class="dropdown hidden">
+		<select id="dropdown_${it.id}" name="dropdown_${it.depth}" previous="0">
+			<option value="{null}">-- None --</option>
+			<j:forEach var="category" items="${it.subCategories}">
+				<option>${category.name}</option>
+			</j:forEach>
+		</select>
+
+		<j:forEach var="category" items="${it.subCategories}">
+			<j:if test="${category.subCategories != null and category.subCategories.size() > 0}">
+				<st:include it="${category}" page="dropdown.jelly"/>
+			</j:if>
+		</j:forEach>
+	</div>
+</j:jelly>

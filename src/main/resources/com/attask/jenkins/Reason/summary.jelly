@@ -1,0 +1,6 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		 xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<link rel="stylesheet" type="text/css" href="${rootURL}/plugin/Reason/reasonTracker.css"/>
+	<h1>Failure Reasons</h1>
+	<st:include it="${it}" page="display.jelly"/>
+</j:jelly>

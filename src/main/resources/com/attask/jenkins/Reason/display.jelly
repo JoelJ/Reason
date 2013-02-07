@@ -1,0 +1,18 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		 xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<div class="reason">
+		<div class="categories">
+			Categories:
+			<j:forEach var="category" items="${it.failureCategories}">
+				${"&lt;ul>&lt;li class='category'>"}${category}
+			</j:forEach>
+			<j:forEach var="category" items="${it.failureCategories}">
+				${"&lt;/li>&lt;/ul>"}
+			</j:forEach>
+		</div>
+		<div>
+			Notes:
+			<div class="notes">${it.failureNotes}</div>
+		</div>
+	</div>
+</j:jelly>

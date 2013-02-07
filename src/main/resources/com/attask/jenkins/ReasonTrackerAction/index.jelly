@@ -1,0 +1,27 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
+		 xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+	<l:layout norefresh="true" title="Build Reason">
+		<st:include it="${it.findRun()}" page="sidepanel.jelly"/>
+		<l:main-panel>
+			<div id="ReasonTrackerAction">
+				<link rel="stylesheet" type="text/css" href="${rootURL}/plugin/Reason/reasonTracker.css"/>
+
+				<j:forEach var="reason" items="${it.findReasons()}">
+					<st:include it="${reason}" page="display.jelly"/>
+				</j:forEach>
+
+				<form action="./submit" method="post">
+					Category:
+					<st:include it="${it.category}" page="dropdown.jelly"/>
+					Notes:<br/>
+					<textarea name="notes"><!--empty--></textarea>
+					<br/>
+					<input type="submit" value="Submit"/>
+				</form>
+
+				<script type="text/javascript" src="${rootURL}/plugin/Reason/dropdown.js"><!--empty--></script>
+				<script>DROPDOWN.init();</script>
+			</div>
+		</l:main-panel>
+	</l:layout>
+</j:jelly>
